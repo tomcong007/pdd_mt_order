@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+
+    <script>!function (t) {
+        var e = t._plt = t._plt || [];
+        e.push(["tm", "ps", +new Date]), (t.requestAnimationFrame || t.webkitRequestAnimationFrame || t.setTimeout)(function () {
+            e.push(["tm", "fraf", +new Date])
+        })
+    }(window);</script>
+
+    <link rel="dns-prefetch" href="//static.pddpic.com">
+    <link rel="dns-prefetch" href="//funimg.pddpic.com">
+
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta property="og:title" content="拼多多商城">
+    <meta property="og:description" content="风靡全国的拼团商城，优质商品新鲜直供，快来一起拼多多吧">
+    <meta property="og:image" content="https://funimg.pddpic.com/base/logo.jpg">
+    <title>我的资料</title>
+    <script>!function () {
+        String.prototype.includes || (String.prototype.includes = function (e, n) {
+            return "number" != typeof n && (n = 0), !(n + e.length > this.length) && -1 !== this.indexOf(e, n)
+        });
+        var e = {
+            MiniProgram: /miniprogram/i,
+            WeChat: /MicroMessenger/i,
+            QQ: /QQ\/[\d\.]+\s+/i,
+            QQAndQzone: /(QQ\/[\d\.]+\s+)|Qzone/i,
+            QQApp: /QQ\//i,
+            Weibo: /Weibo/i,
+            Ios: /iphone|ipad|ipod/i,
+            IosVersion: /os (\d+)_(\d+)_?(\d+)?/i,
+            Android: /Android/i,
+            AndroidVersion: /Android (\d+).?(\d+)?.?(\d+)?/i,
+            AndroidNative: /phh_android_version/i,
+            IosNative: /phh_ios_version/i,
+            Mobile: /Android|webOS|iPhone|iPad|iPod/i,
+            MaJiaBaoAndroid: /mjt_version/i,
+            AndroidNativeVersion: /phh_android_version\/([^\s]+)\s*/i,
+            IosNativeVersion: /phh_ios_version\/([^\s]+)\s*/i,
+            MecoWebViewCore: /MecoCore\/(\d)/i,
+            MecoWebViewSdk: /MecoSDK\/(\d)/i
+        }, n = {
+            Unknown: "unknown",
+            PddIOS: "ios",
+            PddAndroid: "android",
+            MaJiaBaoAndroid: "mjtAndroid",
+            PDDTinyAndorid: "tinyAndroid",
+            WeChat: "wechat",
+            Weibo: "weibo",
+            QQ: "qq",
+            QQApp: "qqapp",
+            WxApp: "wxapp"
+        };
+
+        function i(i, o) {
+            var r = o === n.PddAndroid ? e.AndroidNativeVersion : e.IosNativeVersion, t = i.match(r);
+            return t && t[1] || ""
+        }
+
+        function o(e, n) {
+            [e, n].forEach(function (e) {
+                if ("string" != typeof e) throw new TypeError("Invalid argument expected string")
+            });
+            for (var i = function (e) {
+                return e.split(".").map(function (e) {
+                    return parseInt(e, 10) || 0
+                })
+            }, o = i(e), r = i(n), t = Math.max(o.length, r.length), d = 0; d < t; ++d) {
+                var a = o[d] || 0, s = r[d] || 0;
+                if (a !== s) return a - s
+            }
+            return 0
+        }
+
+        function r() {
+            var n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+            return e.MiniProgram.test(n) || "undefined" != typeof window && "miniprogram" === window.__wxjs_environment
+        }
+
+        function t() {
+            var i = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+            return e.AndroidNative.test(i) ? i.includes("app_type/tiny") ? n.PDDTinyAndorid : n.PddAndroid : e.IosNative.test(i) ? n.PddIOS : e.WeChat.test(i) ? r(i) ? n.WxApp : n.WeChat : e.Weibo.test(i) ? n.Weibo : e.QQApp.test(i) && r(i) ? n.QQApp : e.QQAndQzone.test(i) ? n.QQ : e.MaJiaBaoAndroid.test(i) ? n.MaJiaBaoAndroid : n.Unknown
+        }
+
+        var d = Object.assign || function (e) {
+            for (var n = 1; n < arguments.length; n++) {
+                var i = arguments[n];
+                for (var o in i) Object.prototype.hasOwnProperty.call(i, o) && (e[o] = i[o])
+            }
+            return e
+        }, a = window;
+        a._htmllog = function (e, r) {
+            var s = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {}, p = t(navigator.userAgent),
+                c = p === n.PddAndroid || p === n.PddIOS, u = c && i(navigator.userAgent, p),
+                g = c && window.pinbridge && o(u, "5.41.0") >= 0;
+            if (!(!g && window.__ERROR_SAMPLE_RATE__ && Math.random() > window.__ERROR_SAMPLE_RATE__) && a.XMLHttpRequest) {
+                var h = "unknow", l = (document.cookie || "").split("; ").reduce(function (e, n) {
+                    var i = n.split("=");
+                    return e[i[0]] = i[1], e
+                }, {}), _ = a.navigator;
+                _ && _.connection && (h = _.connection.effectiveType || _.connection.type || "unknown");
+                var v = {unknow: 0, wifi: 1, "2g": 2, "3g": 3, "4g": 4}, f = /(\w+).html/.exec(document.referrer),
+                    w = d({
+                        log_version: "1.0.0",
+                        error_msg: e,
+                        page: r,
+                        page_url: location.href,
+                        refer_page_name: f && f[1],
+                        network: v[h] || 0,
+                        user_id: l.pdd_user_id || "",
+                        time: +new Date,
+                        platform: p
+                    }, s);
+                if (c && window.pinbridge && ("html_error" === e && o(u, "5.8.0") >= 0 && window.pinbridge.callNative("JSRecovery", "tryReload", {
+                        error_info: [{
+                            message: r,
+                            type: e
+                        }]
+                    }), g)) return window.pinbridge.callNative("JSReporter", "addMarmotLog", w);
+                var m = new XMLHttpRequest,
+                    A = ["m.hutaojie.com", "panduoduo.yangkeduo.com"].indexOf(location.hostname) > -1 ? "https://tne.htj.yiran.com/tne.gif" : "https://tne.pinduoduo.com/tne.gif";
+                m.open("POST", A, !0), m.setRequestHeader("Content-Type", "text/plain;charset=UTF-8"), m.withCredentials = !0, m.send(JSON.stringify(w))
+            }
+        }, a._peh = function (e, n, i, o, r) {
+            if (a.XMLHttpRequest && (!e || e.target !== a)) {
+                var t = e + ", " + n + ", " + i + ", " + o + ", " + r, d = "html_error";
+                r && r.stack && (d += "_js", t = e + ";" + r.stack.replace(/\\n/gi, "").split(/\bat\b/).slice(0, 5).join("@")), a._htmllog(d, t)
+            }
+        }, a._peh._raw = !0, a.addEventListener("error", function (e) {
+            if ("[object Event]" === Object.prototype.toString.call(e)) {
+                var n = "html_error", i = "", o = e.srcElement;
+                o ? (n += "_" + String.prototype.toLowerCase.call(o.nodeName), i = "Error: " + o.outerHTML) : i = "Error: " + JSON.stringify(e), a._htmllog(n, i)
+            }
+        }, !0), a.onerror = a._peh
+    }();</script>
+
+    <script>var pinbridge = function (e) {
+        var n, t = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
+            return typeof e
+        } : function (e) {
+            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+        };
+        n = function () {
+            try {
+                if (top.pinbridge) return top.pinbridge
+            } catch (e) {
+            }
+            var e = 0, n = {}, r = {}, i = window._fastJsN ? function (e, n, t, i) {
+                var o = "function" == typeof window._fastJsN.callNative && window._fastJsN.callNative(e, n, t ? JSON.stringify(t) : null, i);
+                return (o = o ? JSON.parse(o) : null) && o.hasOwnProperty("errorCode") && (r.callback(o.callID, o.errorCode, o.data), r.removeCallback(o.callID)), o
+            } : function (e, n, t, r) {
+                !function (e, n) {
+                    if (window && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.hybridAPIMessageHandler) window.webkit.messageHandlers.hybridAPIMessageHandler.postMessage({url: e}); else {
+                        if (null != (navigator.userAgent || navigator.vendor || window.opera).match(/phh_android_version/i)) return alert(e);
+                        var t = document.createElement("iframe");
+                        t.setAttribute("src", e), t.setAttribute("style", "display:none;"), t.setAttribute("height", "0px"), t.setAttribute("width", "0px"), t.setAttribute("frameborder", "0"), document.body.appendChild(t), t.parentNode.removeChild(t), t = null
+                    }
+                }("pinbridge:///request?t=" + e + "&m=" + n + "&p=" + encodeURIComponent(JSON.stringify(t)) + "&c=" + r)
+            };
+            return r = {
+                check: function (e, n, t, i) {
+                    e && n || t && t(!1), r.callNative("AMBridgeAPI", "check", {
+                        module_name: e,
+                        method_name: n
+                    }, function (e) {
+                        t && t(e && e.exist)
+                    }, function () {
+                        i ? i() : t && t(!1)
+                    })
+                }, callback: function (e, t, r) {
+                    r = r || {};
+                    var i = n[e];
+                    i && (i.func ? i.func(t, r) : 0 === t && i.onSuccess ? i.onSuccess(r) : 0 !== t && i.onError && i.onError(r, t))
+                }, callNative: function (r, o, a, c, l) {
+                    a = a || {};
+                    var d = ++e;
+                    return n[d] = {onSuccess: c, onError: l}, a = function r(i) {
+                        if ("object" !== (void 0 === i ? "undefined" : t(i))) return i;
+                        var o = {};
+                        for (var a in"[object Array]" === Object.prototype.toString.call(i) && (o = []), i) if (i.hasOwnProperty(a)) {
+                            var c = i[a];
+                            if ("function" == typeof c) {
+                                var l = ++e;
+                                n[l] = {func: c}, o[a] = "__aimi_function_" + l
+                            } else "object" === (void 0 === c ? "undefined" : t(c)) && null !== c ? o[a] = r(c) : o[a] = c
+                        }
+                        return o
+                    }(a), i(r, o, a, d)
+                }, callbackFromNative: function (e, n, t) {
+                    r.callback(e, n, t)
+                }, removeCallback: function (e) {
+                    delete n[e]
+                }, decodeFunctions: function (e) {
+                    if ("object" === (void 0 === e ? "undefined" : t(e))) {
+                        var n = function (n) {
+                            if (!e.hasOwnProperty(n)) return "continue";
+                            var i, o, a, c = e[n];
+                            if ("string" == typeof c && 0 === c.indexOf("__aimi_function_")) {
+                                var l = c.substring("__aimi_function_".length).split("_");
+                                3 === l.length && (i = parseInt(l[0]), o = parseInt(l[1]), a = parseInt(l[2]), isNaN(i) || isNaN(o) || isNaN(a) || (e[n] = function (e, n) {
+                                    r.callNative("AMBridgeAPI", "callback", {
+                                        bridge_id: o,
+                                        context_id: a,
+                                        call_id: i,
+                                        error_code: e,
+                                        response: n
+                                    })
+                                }))
+                            } else "object" === (void 0 === c ? "undefined" : t(c)) && r.decodeFunctions(c)
+                        };
+                        for (var i in e) n(i)
+                    }
+                }
+            }
+        }(), window.pinbridge = n;
+        var r = n, i = r.callbackFromNative, o = r.callNative, a = r.check, c = r.callback, l = r.decodeFunctions,
+            d = r.removeCallback, u = n;
+        return e.callNative = o, e.callback = c, e.callbackFromNative = i, e.check = a, e.decodeFunctions = l, e.default = u, e.removeCallback = d, e
+    }({});</script>
+
+    <style>._23hwy1hm {
+        min-height: 100%;
+        display: -webkit-box;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        background-color: transparent;
+        padding-bottom: .24rem
+    }
+
+    ._23hwy1hm .wQETTLVs {
+        width: 100%;
+        background-color: #fff
+    }
+
+    ._23hwy1hm ._11FUZlsM {
+        width: 100%
+    }
+
+    ._23hwy1hm ._1fMwBW_K {
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        margin-top: .12rem
+    }
+
+    ._23hwy1hm ._3nzliSdz {
+        text-align: center;
+        font-size: .17rem;
+        color: #58595b;
+        width: 100%
+    }
+
+    ._23hwy1hm ._3nzliSdz:before {
+        content: "\E664";
+        font-size: .18rem;
+        color: #58595b;
+        font-family: icomoon;
+        line-height: 1;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        margin-right: .07rem
+    }
+
+    ._23hwy1hm ._3nzliSdz:active, ._23hwy1hm ._3nzliSdz:active:before {
+        color: #151516
+    }
+
+    ._23hwy1hm ._12XQR0R6 {
+        position: absolute;
+        right: .27rem
+    }
+
+    ._23hwy1hm ._12XQR0R6 .eyKIB4je {
+        width: .22rem;
+        height: .22rem;
+        border-radius: 50%;
+        border: 1px solid #fff
+    }
+
+    ._23hwy1hm ._12XQR0R6 .eyKIB4je:nth-child(2), ._23hwy1hm ._12XQR0R6 .eyKIB4je:nth-child(3) {
+        margin-left: -.08rem
+    }
+
+    ._23hwy1hm ._12XQR0R6 ._20scQAq_ {
+        margin: 0 .04rem;
+        font-size: .13rem;
+        color: #9c9c9c
+    }
+
+    ._23hwy1hm ._12XQR0R6 ._3ts4rwgG {
+        position: relative;
+        top: -.01rem
+    }
+
+    ._23hwy1hm ._12XQR0R6 ._3ts4rwgG:after {
+        content: "\E778";
+        font-size: .09rem;
+        color: #e02e24;
+        font-family: icomoon;
+        line-height: 1;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased
+    }
+
+    .L_Y0hICn {
+        height: .72rem
+    }
+
+    .L_Y0hICn:after {
+        display: none !important
+    }
+
+    ._3A2oqACH {
+        padding: .12rem 0;
+        height: .72rem
+    }
+
+    ._3A2oqACH img {
+        border: 1px solid #ededed;
+        border-radius: 100%;
+        width: .49rem;
+        height: .49rem
+    }
+
+    ._3B-xS4jc, .Lr3hGkKE {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 2.8rem;
+        line-height: .56rem
+    }
+
+    ._1MVzHy1a {
+        position: relative;
+        top: .01rem
+    }
+
+    ._1Mut5RvP {
+        color: #9c9c9c
+    }
+
+    ._1xks67VY {
+        white-space: pre-wrap
+    }
+
+    .lKudQxRb {
+        position: relative;
+        font-size: .17rem;
+        line-height: normal;
+        color: #151516;
+        padding: 0 .12rem;
+        background-color: #fff
+    }
+
+    .lKudQxRb.cg68_q9c:active {
+        background-color: #ebebeb
+    }
+
+    .lKudQxRb:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: .12rem;
+        right: 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        pointer-events: none;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        box-sizing: border-box;
+        border-bottom: 1px solid #eee;
+        border-radius: 0
+    }
+
+    ._36_zn75H {
+        display: -webkit-box;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-flex-direction: row;
+        min-height: .56rem
+    }
+
+    ._2SVvA3hJ {
+        width: .2rem;
+        height: .2rem;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0
+    }
+
+    ._2OhePPD- {
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        flex-grow: 1
+    }
+
+    ._3144HeDi:before {
+        content: "\E777";
+        font-size: .12rem;
+        color: #d9d9d9;
+        font-family: icomoon-psnl;
+        line-height: 1;
+        font-weight: 400;
+        margin-left: .05rem;
+        position: relative;
+        top: -.01rem
+    }
+
+    ._1hPG51ui {
+        padding-top: .08rem
+    }
+
+    ._1hPG51ui + .lKudQxRb:after {
+        display: none
+    }
+
+    .xTw8bPDB {
+        position: relative;
+        top: -.01rem
+    }
+
+    .xTw8bPDB:after {
+        content: "\E778";
+        font-size: .09rem;
+        color: #e02e24;
+        font-family: icomoon;
+        line-height: 1;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased
+    }
+
+    ._3TR9PKsk {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-color: #e02e24;
+        color: #fff;
+        height: .18rem;
+        padding: 0 .04rem;
+        border-radius: .22rem;
+        line-height: .18rem;
+        font-size: .12rem
+    }
+
+    @supports not (-webkit-touch-callout:none) {
+        ._3TR9PKsk {
+            line-height: .19rem
+        }
+    }
+
+    ._2SfD_QfH {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        font-size: .14rem;
+        color: #9c9c9c;
+        max-width: 2.48rem;
+        padding: .083rem 0;
+        text-align: right;
+        word-break: break-all
+    }
+
+    ._2SfD_QfH, ._3Q7VHkAB {
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center
+    }
+
+    ._3Q7VHkAB {
+        display: -webkit-box;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+        -webkit-justify-content: flex-end;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-flex-direction: row
+    }
+
+    ._3Q7VHkAB ._2SfD_QfH {
+        margin: 0 .04rem
+    }
+
+    ._3Q7VHkAB ._2yogumGL img {
+        width: .22rem;
+        height: .22rem;
+        border-radius: 50%;
+        border: 1px solid #fff
+    }
+
+    ._3Q7VHkAB ._2yogumGL img:nth-child(n+2) {
+        margin-left: -.08rem
+    }
+
+    ._2kJUDC4T {
+        display: -webkit-box;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-flex-direction: row
+    }
+
+    ._2kJUDC4T ._2mxlYuJ5 {
+        position: relative;
+        width: .18rem;
+        height: .18rem
+    }
+
+    ._2kJUDC4T .kLs05SzC {
+        position: relative;
+        top: .01rem;
+        height: .18rem;
+        padding-left: .04rem;
+        line-height: .18rem;
+        border-radius: .22rem
+    }
+
+    @supports not (-webkit-touch-callout:none) {
+        .kLs05SzC {
+            line-height: .19rem
+        }
+    }</style>
+    <link href="https://static.pddpic.com/assets/css/react_common_policy_pv_2_0ffc53889f788161dd28.css"
+          rel="stylesheet">
+    <link href="https://static.pddpic.com/assets/css/react_pdd_policy_pv_2_db5a5986e32b4d582cac.css" rel="stylesheet">
+    <link href="https://static.pddpic.com/assets/css/react_personal_profile_adc26dab9177fec0bf5b.css" rel="stylesheet">
+
+    <script>!function (t) {
+        var n = t._plt = t._plt || [];
+        n.push(["tm", "fp", +new Date]), document.addEventListener("DOMContentLoaded", function () {
+            n.push(["tm", "dr", +new Date])
+        }), t.addEventListener("load", function () {
+            n.push(["tm", "ld", +new Date])
+        })
+    }(window);</script>
+
+
+    <script>
+        window.__webpack_public_path__ = "https://static.pddpic.com/";
+    </script>
+
+</head>
+
+<body>
+
+<script>
+    var userAgent = navigator.userAgent;
+    var RegAndroidNative = /phh_android_version/i;
+    var RegIosNative = /phh_ios_version/i;
+    var isNativePlatform = RegAndroidNative.test(userAgent) || RegIosNative.test(userAgent);
+    if (isNativePlatform) {
+        window.pinbridge && window.pinbridge.callNative('JSUIControl', 'hideLoading');
+    }
+</script>
+
+
+<div id="main">
+    <div class="_23hwy1hm">
+        <div class="wQETTLVs">
+            <ul class="_11FUZlsM">
+                <li class="lKudQxRb L_Y0hICn">
+                    <div class="_36_zn75H"><span class="_2OhePPD-">头像</span>
+                        <div class="_3A2oqACH"><img class="pdd-lazy-image "/></div>
+                    </div>
+                </li>
+                <li class="lKudQxRb">
+                    <div class="_36_zn75H"><span class="_2OhePPD-">昵称</span>
+                        <div class=""><span class="_3B-xS4jc">188****7261</span></div>
+                    </div>
+                </li>
+                <li class="lKudQxRb">
+                    <div class="_36_zn75H"><span class="_2OhePPD-">性别</span>
+                        <div class=""><span class="" style="color:#9c9c9c">未知</span></div>
+                    </div>
+                </li>
+                <li class="lKudQxRb">
+                    <div class="_36_zn75H"><span class="_2OhePPD-">地区</span>
+                        <div class=""><span class="_1Mut5RvP Lr3hGkKE"></span></div>
+                    </div>
+                </li>
+                <li class="lKudQxRb cg68_q9c">
+                    <div class="_36_zn75H"><span class="_2OhePPD-">生日</span>
+                        <div class=""><span class="_1MVzHy1a" style="color:#9c9c9c">未填写，填写后会匹配星座</span><i
+                                class="_3144HeDi"></i></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="lKudQxRb cg68_q9c">
+                <div class="_36_zn75H"><span class="_2OhePPD-">个性签名</span>
+                    <div><span class="_2SfD_QfH" style="color:#9c9c9c;font-size:0.17rem">未填写</span></div>
+                    <span class="_3144HeDi"></span></div>
+            </div>
+            <div class="lKudQxRb cg68_q9c">
+                <div class="_36_zn75H"><span class="_2OhePPD-">手机号</span><span class="_2kJUDC4T"><img
+                        class="pdd-lazy-image _2mxlYuJ5"/><div style="font-size:0.17rem;color:#151516" class="kLs05SzC">188****7261</div></span><span
+                        class="_3144HeDi"></span></div>
+            </div>
+            <div class="lKudQxRb cg68_q9c">
+                <div class="_36_zn75H"><span class="_2OhePPD-">多多号</span>
+                    <div><span class="_2SfD_QfH" style="color:#151516;font-size:0.17rem">636145722011</span></div>
+                    <span class="_3144HeDi"></span></div>
+            </div>
+            <div class="_1hPG51ui"></div>
+            <div class="lKudQxRb cg68_q9c">
+                <div class="_36_zn75H"><span class="_2OhePPD-">我的带货动态</span><span class="_3144HeDi"></span></div>
+            </div>
+            <div class="lKudQxRb cg68_q9c">
+                <div class="_36_zn75H"><span class="_2OhePPD-">我的发票抬头</span><span class="_3144HeDi"></span></div>
+            </div>
+            <div class="lKudQxRb cg68_q9c">
+                <div class="_36_zn75H"><span class="_2OhePPD-">我的尺码信息</span><span class="_3144HeDi"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.rawData = {
+        "store": {
+            "errorRedirectUrl": "\u002F",
+            "showTitleEntrance": true,
+            "lock": false,
+            "lastSyncTime": 0,
+            "ProfileServices": {},
+            "isServerRendered": true,
+            "isFinishInitLoading": true,
+            "showDatePicker": false,
+            "showSignature": false,
+            "profileList": [{
+                "type": 0,
+                "typeName": "头像",
+                "value": "https:\u002F\u002Favatar2.pddpic.com\u002Favatar\u002Fdefault\u002F5.png"
+            }, {"type": 1, "typeName": "昵称", "value": "188****7261"}, {
+                "type": 2,
+                "typeName": "性别",
+                "value": "未知"
+            }, {"type": 3, "typeName": "地区", "value": ""}, {"type": 4, "typeName": "生日", "value": "未填写，填写后会匹配星座"}],
+            "userInfo": {
+                "avatar": "https:\u002F\u002Favatar2.pddpic.com\u002Favatar\u002Fdefault\u002F5.png",
+                "nickname": "188****7261",
+                "gender": 0,
+                "birthday": 0,
+                "serverTime": 1611544718,
+                "synchronizeUserInfoAllowed": false,
+                "items": [{
+                    "id": 7,
+                    "name": "personalized_signature",
+                    "title": "个性签名",
+                    "track_info": {"page_el_sn": "99964"},
+                    "link": "",
+                    "red_dot": {"type": 3, "text": {"content": "未填写", "font": 17, "text_color": "#9c9c9c"}}
+                }, {
+                    "id": 9,
+                    "name": "mobile_bind",
+                    "title": "手机号",
+                    "track_info": {"page_el_sn": "1532765"},
+                    "link": "\u002Fcommercial_pre_orders.html?_t_module_name=psnl_phone_unbinding&refer_bind_scene=profile",
+                    "red_dot": {
+                        "type": 7,
+                        "text": {"content": "188****7261", "font": 17, "text_color": "#151516"},
+                        "image": ["https:\u002F\u002Fpinduoduoimg.yangkeduo.com\u002Fpersonal\u002F2020-03-17\u002F03eb9a92-67a5-46d5-a9b4-d66aefe6ec7e.png"],
+                        "image_width": 18,
+                        "image_height": 18
+                    }
+                }, {
+                    "id": 10,
+                    "name": "dd_info",
+                    "title": "多多号",
+                    "track_info": {"page_el_sn": "2058580"},
+                    "link": "",
+                    "extra_info": {
+                        "submit_btn": "复制多多号",
+                        "cancel_btn": "取消",
+                        "detail_desc": "“636145722011”\n是您在拼多多上的唯一用户标识"
+                    },
+                    "red_dot": {"type": 3, "text": {"content": "636145722011", "font": 17, "text_color": "#151516"}}
+                }, {"id": 101, "name": "separator"}, {
+                    "id": 15,
+                    "name": "bring_goods",
+                    "title": "我的带货动态",
+                    "track_info": {"page_el_sn": "630910"},
+                    "link": "transac_return_compensation.html?_t_timestamp=transac_rec_record"
+                }, {
+                    "id": 16,
+                    "name": "receipt_info",
+                    "title": "我的发票抬头",
+                    "track_info": {"page_el_sn": "1466452"},
+                    "link": "\u002Fcommercial_pre_orders.html?_t_module_name=invoice_title_list"
+                }, {
+                    "id": 19,
+                    "name": "user_size",
+                    "title": "我的尺码信息",
+                    "track_info": {"page_el_sn": "3343494"},
+                    "link": "commercial_pre_orders.html?_t_module_name=psnl_size_info"
+                }]
+            },
+            "isWeChatPlatform": false,
+            "isQQPlatform": false,
+            "isShowTimeline": false,
+            "webpEnable": true
+        }
+    };
+    window.leo = null;
+</script>
+
+
+<script>!function (e) {
+    function r(r) {
+        for (var n, u, c = r[0], i = r[1], f = r[2], d = 0, s = []; d < c.length; d++) u = c[d], o[u] && s.push(o[u][0]), o[u] = 0;
+        for (n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n]);
+        for (l && l(r); s.length;) s.shift()();
+        return a.push.apply(a, f || []), t()
+    }
+
+    function t() {
+        for (var e, r = 0; r < a.length; r++) {
+            for (var t = a[r], n = !0, c = 1; c < t.length; c++) {
+                var i = t[c];
+                0 !== o[i] && (n = !1)
+            }
+            n && (a.splice(r--, 1), e = u(u.s = t[0]))
+        }
+        return e
+    }
+
+    var n = {}, o = {0: 0}, a = [];
+
+    function u(r) {
+        if (n[r]) return n[r].exports;
+        var t = n[r] = {i: r, l: !1, exports: {}};
+        return e[r].call(t.exports, t, t.exports, u), t.l = !0, t.exports
+    }
+
+    u.e = function (e) {
+        var r = [], t = o[e];
+        if (0 !== t) if (t) r.push(t[2]); else {
+            var n = new Promise((function (r, n) {
+                t = o[e] = [r, n]
+            }));
+            r.push(t[2] = n);
+            var a, c = document.createElement("script");
+            c.charset = "utf-8", c.timeout = 120, u.nc && c.setAttribute("nonce", u.nc), c.src = function (e) {
+                return u.p + "assets/js/" + ({
+                    34: "pdd-mod/market-share",
+                    35: "pdd-mod/qq-service",
+                    36: "pdd-mod/wechat-service"
+                }[e] || e) + "_" + {
+                    34: "1c7eb6a339df4ebf984c",
+                    35: "42c3905d2f2858ad5667",
+                    36: "16f0e3d805c7484ead39",
+                    130: "7d7ccf9861521b0c2786"
+                }[e] + ".js"
+            }(e);
+            var i = new Error;
+            a = function (r) {
+                c.onerror = c.onload = null, clearTimeout(f);
+                var t = o[e];
+                if (0 !== t) {
+                    if (t) {
+                        var n = r && ("load" === r.type ? "missing" : r.type), a = r && r.target && r.target.src;
+                        i.message = "Loading chunk " + e + " failed.\n(" + n + ": " + a + ")", i.name = "ChunkLoadError", i.type = n, i.request = a, t[1](i)
+                    }
+                    o[e] = void 0
+                }
+            };
+            var f = setTimeout((function () {
+                a({type: "timeout", target: c})
+            }), 12e4);
+            c.onerror = c.onload = a, document.head.appendChild(c)
+        }
+        return Promise.all(r)
+    }, u.m = e, u.c = n, u.d = function (e, r, t) {
+        u.o(e, r) || Object.defineProperty(e, r, {enumerable: !0, get: t})
+    }, u.r = function (e) {
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(e, "__esModule", {value: !0})
+    }, u.t = function (e, r) {
+        if (1 & r && (e = u(e)), 8 & r) return e;
+        if (4 & r && "object" == typeof e && e && e.__esModule) return e;
+        var t = Object.create(null);
+        if (u.r(t), Object.defineProperty(t, "default", {
+                enumerable: !0,
+                value: e
+            }), 2 & r && "string" != typeof e) for (var n in e) u.d(t, n, function (r) {
+            return e[r]
+        }.bind(null, n));
+        return t
+    }, u.n = function (e) {
+        var r = e && e.__esModule ? function () {
+            return e.default
+        } : function () {
+            return e
+        };
+        return u.d(r, "a", r), r
+    }, u.o = function (e, r) {
+        return Object.prototype.hasOwnProperty.call(e, r)
+    }, u.p = "", u.oe = function (e) {
+        throw console.error(e), e
+    };
+    var c = window.webpackJsonpForReact = window.webpackJsonpForReact || [], i = c.push.bind(c);
+    c.push = r, c = c.slice();
+    for (var f = 0; f < c.length; f++) r(c[f]);
+    var l = i;
+    t()
+}([]);</script>
+<script>(window.webpackJsonpForReact = window.webpackJsonpForReact || []).push([[16, 4, 7, 22, 23, 29], {
+    Q5pD: function (o, n, p) {
+    }
+}]);</script>
+
+
+<script src="https://static.pddpic.com/assets/js/react_vendor_4c90be8ec0829b960379.js" crossorigin defer></script>
+
+
+<script type="text/javascript" src="https://static.pddpic.com/assets/js/vendor_policy_pv_2_05170e56ff10fd63c409.js"
+        crossorigin="anonymous" defer="defer"></script>
+<script type="text/javascript" src="https://static.pddpic.com/assets/js/react_pdd_policy_pv_2_a671a5962a6054720006.js"
+        crossorigin="anonymous" defer="defer"></script>
+<script type="text/javascript" src="https://static.pddpic.com/assets/js/react_personal_profile_20f7e95cc91acea7e9c7.js"
+        crossorigin="anonymous" defer="defer"></script>
+
+
+<script>
+    window.config = {
+        "app": {
+            "hostConfig": {
+                "shop": {
+                    "shopID": 2,
+                    "name": "拼多多",
+                    "logo": "https:\u002F\u002Ffunimg.pddpic.com\u002Fbase\u002Flogo.jpg",
+                    "weChatTimelineShareDisabled": false,
+                    "qqTimelineShareDisabled": true
+                },
+                "loggingURL": "https:\u002F\u002Fth.yangkeduo.com\u002Ft.gif",
+                "httpsLoggingURL": "https:\u002F\u002Fth.yangkeduo.com\u002Ft.gif",
+                "wxAppLoggingURL": "https:\u002F\u002Fxcxapp.pinduoduo.com\u002Ft.gif",
+                "qqAppLoggingURL": "https:\u002F\u002Fxcxapp.pinduoduo.com\u002Fqqt.gif",
+                "logRoutes": {
+                    "download": "https:\u002F\u002Fat.pinduoduo.com\u002Fp",
+                    "perf": "https:\u002F\u002Ftp.pinduoduo.com\u002Fp.gif",
+                    "error": "https:\u002F\u002Fte.pinduoduo.com\u002Fe.gif",
+                    "chat_error": "https:\u002F\u002Fte.pinduoduo.com\u002Fe.gif",
+                    "real_error": "https:\u002F\u002Ftne.pinduoduo.com\u002Ftne.gif",
+                    "ad": "https:\u002F\u002Fta.yangkeduo.com\u002Ft.gif",
+                    "tracking": "https:\u002F\u002Ftldas.pinduoduo.com\u002Fe.gif"
+                },
+                "httpsLogRoutes": {
+                    "perf": "https:\u002F\u002Ftp.pinduoduo.com\u002Fp.gif",
+                    "error": "https:\u002F\u002Fte.pinduoduo.com\u002Fe.gif",
+                    "chat_error": "https:\u002F\u002Fte.pinduoduo.com\u002Fe.gif",
+                    "real_error": "https:\u002F\u002Ftne.pinduoduo.com\u002Ftne.gif",
+                    "ad": "https:\u002F\u002Fta.yangkeduo.com\u002Ft.gif",
+                    "tracking": "https:\u002F\u002Ftldas.pinduoduo.com\u002Fe.gif"
+                },
+                "pushDomain": "ws:\u002F\u002Fws.pinduoduo.com\u002F",
+                "chatDomain": "ws:\u002F\u002Fws.pinduoduo.com\u002F",
+                "wssDomain": "wss:\u002F\u002Fws.pinduoduo.com\u002F",
+                "fileDomain": "http:\u002F\u002Ffile.pinduoduo.com\u002F",
+                "httpsFileDomain": "https:\u002F\u002Ffile.pinduoduo.com\u002F",
+                "qqFollowTip": "感谢关注拼多多",
+                "AppID": {
+                    "FriendPay": -1,
+                    "WeChat": 2,
+                    "WeChatWAPPay": 20,
+                    "SMS": 5,
+                    "AliPay": 6,
+                    "QQ": 12,
+                    "Weibo": 11,
+                    "AliPayWeb": 9,
+                    "QQConnect": 13,
+                    "QQPublicOld": 27,
+                    "QQPublic": 30,
+                    "ApplePay": 31,
+                    "AliPayDirectDebit": 35,
+                    "WeChatH5Pay": 38,
+                    "HBInstallmentPay": 52,
+                    "UnionPay": 78,
+                    "UnionPayWeb": 79
+                },
+                "ApiKey": {
+                    "WeChat": "wx839691cce7c102bb",
+                    "Weibo": "3907421985",
+                    "QQConnect": "101273489",
+                    "QQPublicOld": "200633114",
+                    "QQPublic": "200675334",
+                    "QQUIN": "1419183687",
+                    "QQPublicTrack": "10000096",
+                    "QQPublicMid": "1316857601",
+                    "BaiduStatistics": "865a6952adbb55a10d86810cdcc6864a"
+                },
+                "RedirectURI": {
+                    "AliPayDirectDebit": "pinduoduoalipays:\u002F\u002F",
+                    "Weibo": "http:\u002F\u002Fmobile.yangkeduo.com\u002Fwboauth_callback.html",
+                    "QQConnect": "http:\u002F\u002Fmobile.yangkeduo.com\u002Fqqoauth_callback.html"
+                },
+                "imgShareDomain": "http:\u002F\u002Fm.pin3pin.com\u002F",
+                "ContactUrl": "http:\u002F\u002Fmp.weixin.qq.com\u002Fs?__biz=MzIxNzA1NDEyNQ==&mid=649170962&idx=1&sn=8763710a673d7b76f418a7ae76cff86c#rd",
+                "ForceContactUrl": "http:\u002F\u002Fmp.weixin.qq.com\u002Fs?__biz=MzIxNzA1NDEyNQ==&mid=649170998&idx=1&sn=684606e474788e7f191f6f6c68d0dfe4#rd",
+                "QQContactUrl": "http:\u002F\u002Fpost.mp.qq.com\u002Fmaterial\u002Fshow\u002F31343139313833363837-1472733830-1464276288782813-0.html?_wv=2281701505&v=3&sig=73182fcdc7ed1c0b6aeb3ce78501d00b&_bid=2321",
+                "thirdLevelLoginPath": "jkr_report.html",
+                "domain": "https:\u002F\u002Fmobile.yangkeduo.com\u002F",
+                "BeiTaiShareDomains": {"0": "http:\u002F\u002Fmobile.pinduoduo.net\u002F"},
+                "hasThirdLevelDomain": false,
+                "shareDomain": "https:\u002F\u002Fmobile.yangkeduo.com\u002F"
+            },
+            "get": function () {
+                if (this.hostConfig) {
+                    return this.hostConfig;
+                }
+
+                return window.hostInfoResolveController.resolveHostConfig(window.hostInfoResolveController.hostInfo, navigator.userAgent, true);
+            },
+            "constant": {
+                "CookieKey": {
+                    "AccessToken": "PDDAccessToken",
+                    "ApiUid": "api_uid",
+                    "WebpEnable": "webp",
+                    "UID": "pdd_user_id",
+                    "UIN": "pdd_user_uin",
+                    "EnableFriendSys": "grayscaleCheck",
+                    "UA": "ua"
+                },
+                "EVENT_TYPE": {"LUCKY_DRAW": 1, "SPIKE": 2},
+                "OFFICIAL_MALL_ID": {"Online": "606", "Hutaojie": "1", "Weipin": "16"},
+                "TrackingEvent": {"AlertAppDownload": {"Show": "a_a_d_s", "Download": "a_a_d_d", "Close": "a_a_d_c"}},
+                "LocalStorageKey": {
+                    "CheckAppDownload": "e1adaa118ffc8534",
+                    "AppDownloadUsers": "618bf2394a0be09f",
+                    "SubscribeStatus": "c6476b07198e8483",
+                    "UID": "0e4f9612e0fbe579",
+                    "UIN": "830d7c3797f9909d",
+                    "TimelineReadStatus": "55790604e73d05da",
+                    "TimelineMarkWelcome": "TimelineMarkWelcome",
+                    "TimelineMarkRead": "TimelineMarkRead"
+                },
+                "AppDownloadUsersMaxNum": 10,
+                "CDNImgHostName": "http:\u002F\u002Ffunimg.pddpic.com\u002F",
+                "CDNConstant": {},
+                "PinSocket": {
+                    "KEEP_ALIVE_INTERVAL": 30000,
+                    "REQUEST_ID_SEED": 1,
+                    "NATIVE_NOTIFICATION_NAME": "PDDReceiveSocketMessage",
+                    "HandlerType": {"Open": 0, "Close": 1, "Authentication": 2, "Message": 3},
+                    "MinSupportVersion": {"Android": "4.3"},
+                    "ClientType": {"Android": "android", "IOS": "ios", "Web": "web"},
+                    "WebSocketType": {"Push": 1, "Chat": 2},
+                    "doCmtCmd": ["latest_remain_mall_conversations", "mall_online_status", "unread_msg_count", "unread_friend_msg_count", "assign_cs_logic", "mark_read", "send_message", "send_friend_message"],
+                    "NewPushDomainRate": 100
+                }
+            }
+        }
+    };
+</script>
+
+
+<script>window;</script>
+
+
+<script>
+    window.__NAVIGATION_MAP__ = {
+        "download.html": "matthew_download.html",
+        "market_download.html": "undefined.html",
+        "down_market_download.html": "undefined.html",
+        "comm_order_snapshot.html": "undefined.html",
+        "miff_transplantation_pretence.html": "refresh_slew_forlorn.html",
+        "group185.html": "group186.html",
+        "pjlkvgcf.html": "transac_virtual_card_pwd.html",
+        "ddplteec.html": "transac_virtual_card_pwd.html",
+        "svideo_personal.html": "fyxmkief.html?page_key=1",
+        "goods_express.html": "psnl_goods_help.html?_t_module_name=goods_express",
+        "search_view.html": "relative_goods.html?__rp_name=search_view"
+    };
+</script>
+
+
+<script>window.__CDN_IMG__ = {
+    "useIpFallback": true,
+    "retryLimit": 3,
+    "backupDomainConfigMap": {
+        "t00img.yangkeduo.com": {"t00img-b.yangkeduo.com": 100},
+        "t13img.yangkeduo.com": {"t13img-b.yangkeduo.com": 100},
+        "t20img.yangkeduo.com": {"t20img-b.yangkeduo.com": 100},
+        "t22img.yangkeduo.com": {"t22img-b.yangkeduo.com": 100},
+        "images.pinduoduo.com": {"images-1.pinduoduo.com": 60, "images-2.pinduoduo.com": 40},
+        "img.pddpic.com": {"img-1.pddpic.com": 40, "img-2.pddpic.com": 40, "img-3.pddpic.com": 20},
+        "t04img.yangkeduo.com": {"t04img-b.yangkeduo.com": 100},
+        "commimg.pddpic.com": {"commimg-1.pddpic.com": 60, "commimg-2.pddpic.com": 40},
+        "promotion.pddpic.com": {
+            "promotion-1.pddpic.com": 50,
+            "promotion-2.pddpic.com": 30,
+            "promotion-3.pddpic.com": 20
+        },
+        "funimg.pddpic.com": {"funimg-1.pddpic.com": 65, "funimg-2.pddpic.com": 35},
+        "avatar.pddpic.com": {"avatar-b.pddpic.com": 100},
+        "avatar2.pddpic.com": {"avatar2-1.pddpic.com": 65, "avatar2-2.pddpic.com": 35},
+        "review.pddpic.com": {"review-1.pddpic.com": 40, "review-2.pddpic.com": 40, "review-3.pddpic.com": 20}
+    }
+};</script>
+
+
+<script>
+    window.__CMT_AMPLIFY_RATE__ = 1;
+</script>
+
+
+<script>
+    window.__ERROR_SAMPLE_RATE__ = 1;
+    window.__PERF_SAMPLE_RATE__ = 1;
+</script>
+
+
+<script>
+    window.__CMT_HOST__ = "cmtw.pinduoduo.com";
+</script>
+
+
+</body>
+</html>

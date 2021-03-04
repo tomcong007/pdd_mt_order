@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "拼多多订单工具单机exe版",
+  "version": "20210220",
+  "description": "拼多多订单工具单机exe版",
+  "icons": {
+    "16": "images/wow.png"
+  },
+  "browser_action": {
+    "default_icon": "images/wow.png",
+    "default_title": "拼多多订单工具单机exe版"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "permissions": [
+    "cookies",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches":["http://yangkeduo.com/orders.html*"],
+      "js": ["js/ajax_util.js","js/content.js"
+      ],
+      "run_at": "document_end",
+      "exclude_globs": [],
+      "include_globs": [
+        "*"
+      ]
+    }
+  ]
+}
